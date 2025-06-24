@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>Item Details</title>
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://gistcdn.githack.com/mfd/09b70eb47474836f25a21660282ce0fd/raw/e06a670afcb2b861ed2ac4a1ef752d062ef6b46b/Gilroy.css">
+
+<style>
+html{
+font:18px 'Gilroy', sans-serif;
+}
+</style>
+    
+</head>
+<body>
+    <div class="nav">
+            <h1>
+                Snap-Stream
+            </h1>
+            <h1>
+                Contact-Us
+            </h1>
+    </div>
+    <div class="main">
+        <h1>SNAP-STREAM</h1>
+        <h1>Summarise any youtube video in just one click</h1>
+        <form action = "/submit" method = "post" class = "secondarea">  
+        <input type="text" placeholder = "Paste the link here" name = "youtube_link">
+        <button type = "submit">Send</button>
+    </div>
+    </div>
+</body>
+</html>

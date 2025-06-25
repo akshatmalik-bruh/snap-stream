@@ -10,7 +10,8 @@ def subtitleextractor(url):
         'writeautomaticsub': True,          # Fallback to auto subs
         'subtitleslangs': ['en','hi'],           # Language (change to ['all'] for all)
         'skip_download': True,              # Don’t download video
-        'outtmpl': 'subtitles/%(title)s.%(ext)s',  # Output location
+        'outtmpl': 'subtitles/%(title)s.%(ext)s', 
+     
         
     }
 

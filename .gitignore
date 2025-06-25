@@ -58,3 +58,4 @@ poetry.lock
 # Others
 *.sqlite3
 *.db
+subtitles

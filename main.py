@@ -8,11 +8,11 @@ from fastapi.responses import JSONResponse
 from script2 import textgenerator
 from database import Base,engine,get_db  
 import models
-from typing import Annotated
+from typing import Annotated,List
 from sqlalchemy.orm import Session
-
+from modelresponse import modelanswer
 app = FastAPI()
-
+import json
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 
@@ -59,15 +59,30 @@ async def handle_form(request: Request, db : db_dependency,youtube_link: str = F
         db.add(db_url)
         db.commit()
         db.refresh(db_url)
+        response = modelanswer(db_url.subtitles)
+        finalresponse = response.replace("json","")
+        clean_response = response.strip().removeprefix("```json").removeprefix("json").removesuffix("```").strip()
+        data = json.loads(clean_response)
+        
+        
+      
         return templates.TemplateResponse("subtitle.html", {
         "request": request,
-        "List" : db_url.subtitles
+        "List" : data,
+        "concepts": data["concepts"]
         
         })
     else:
+        response = modelanswer(result.subtitles)
+        finalresponse = response.replace("json","")
+        clean_response = response.strip().removeprefix("```json").removeprefix("json").removesuffix("```").strip()
+        data = json.loads(clean_response)
+        
+        
         return templates.TemplateResponse("subtitle.html",{
             "request" : request,
-            "List" : result.subtitles
+            "List" : data,
+            "concepts": data["concepts"]
         })
    
     

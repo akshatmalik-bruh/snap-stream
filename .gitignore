@@ -59,3 +59,6 @@ poetry.lock
 *.sqlite3
 *.db
 subtitles
+
+# ide related
+.cursor

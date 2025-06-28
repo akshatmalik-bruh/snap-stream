@@ -5,9 +5,6 @@ from together import Together
 import json
 
 
-
-
-
 def modelanswer(data: str):
     client = Together(api_key=os.getenv("API_KEY"))
 
@@ -16,17 +13,19 @@ def modelanswer(data: str):
         messages=[
             {
                 "role": "system",
-                "content":  "Respond only with valid JSON (not Python dicts). Use double quotes for all strings and keys."
+                "content": "Respond only with valid JSON (not Python dicts). Use double quotes for all strings and keys.",
             },
             {
                 "role": "user",
                 "content": [
-                    {"type": "text", "text": "Here are the subtitles I have provided of a particular YouTube video. I want you to summarize the subtitles by first finding out a perfect title, then the concepts they taught in a heading and description format. The keys should be `title`, and then a nested JSON with listname 'concepts' within `heading` and `description`."},
-                    {"type": "text", "text": data}
-                ]
-            }
-        ]
+                    {
+                        "type": "text",
+                        "text": "Here are the subtitles I have provided of a particular YouTube video. I want you to summarize the subtitles by first finding out a perfect title, then the concepts they taught in a heading and description format. The keys should be `title`, and then a nested JSON with listname 'concepts' within `heading` and `description`.",
+                    },
+                    {"type": "text", "text": data},
+                ],
+            },
+        ],
     )
 
     return response.choices[0].message.content
-

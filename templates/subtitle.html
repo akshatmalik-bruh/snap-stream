@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Item Details</title>
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://gistcdn.githack.com/mfd/09b70eb47474836f25a21660282ce0fd/raw/e06a670afcb2b861ed2ac4a1ef752d062ef6b46b/Gilroy.css">
+
+    <style>
+        html {
+            font: 18px 'Gilroy', sans-serif;
+        }
+        body {
+            min-height: 100vh;
+            height: fit-content;
+            padding: 2rem;
+        }
+        .naur > h1 {
+            font: 24px;
+        }
+        .heading{
+            color : #8585df
+        }
+        .content{
+            color : red
+        }
+
+       
+    </style>
+</head>
+<body>
+
+    <div class="naur">
+        <h1>{{ List.title }}</h1>
+        <div class="concept">
+            {% for concept in concepts %}
+            <h1 class = "heading">{{ concept.heading }}</h1>
+            <h1 class = "content">{{ concept.description }}</h1>
+            {% endfor %}
+        </div>
+        
+       
+    </div>
+
+</body>
+</html>

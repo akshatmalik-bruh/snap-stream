@@ -2,13 +2,11 @@ from fastapi import FastAPI, Request, Depends
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-from script import subtitleextractor
 from fastapi import Form
-from fastapi.responses import JSONResponse
 from script2 import textgenerator
 from database import Base, engine, get_db
 import models
-from typing import Annotated, List
+from typing import Annotated
 from sqlalchemy.orm import Session
 from modelresponse import modelanswer
 

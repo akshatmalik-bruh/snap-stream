@@ -1,8 +1,6 @@
-from dotenv import load_dotenv
 import os
 from together import Together
 
-import json
 
 
 def modelanswer(data: str):

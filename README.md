@@ -11,10 +11,11 @@
 ## Overview
 Snap Stream is an innovative video summarizer built to help students quickly grasp key concepts from youtube viceo lectures. By condensing lengthy lectures into concise 30-second reading blocks, this project aims to enhance learning efficiency and make studying more manageable. Whether you're a student looking to save time or an educator seeking to improve knowledge retention, Snap Stream is the perfect tool for you.
 
-## Key Features
-Summarize youtube video into 30-second reading blocks\n
-Support for hindi and english\n
-User-friendly interface for easy navigation\n
+## ✨ Key Features
+
+- Summarize YouTube videos into 30-second reading blocks  
+- Support for Hindi and English  
+- User-friendly interface for easy navigation  
 
 ## Tech Stack
 | Library/Framework | Version |
